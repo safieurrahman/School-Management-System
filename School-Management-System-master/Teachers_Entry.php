@@ -1,5 +1,7 @@
 <?php
 
+$con=mysqli_connect("localhost","root","","database");
+
 	$msg="";
 	$opr="";
 	$id="";
@@ -21,6 +23,13 @@ if(isset($_POST['btn_sub'])){
 	$married=$_POST['marriedrdo'];
 	$phone=$_POST['phonetxt'];
 	$mail=$_POST['emailtxt'];
+    $password=$_POST['password'];
+    
+    $role = 'Teacher';
+    
+        $query = "INSERT INTO users_tbl VALUES('','$l_name','$password','$role')";
+        mysqli_query($con,$query);
+    
 	
 $sql_ins=mysql_query("INSERT INTO teacher_tbl VALUES( NULL,'$f_name','$l_name' ,'$gender','$dob','$addr','$degree','$salary' ,'$married','$phone','$mail')");
 if($sql_ins==true) {
@@ -208,6 +217,14 @@ else
                         <input type="text" class="form-control" id="lnametxt" name="lnametxt"  placeholder="Last Name..." required>
                     </div>
                 </div>
+                
+                <div class="form-group">
+                    <label for="password" class="control-label col-sm-3">Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" id="password" name="password"  placeholder="Password" required>
+                    </div>
+                </div>
+                
                 <div class="form-group">
                     <label for="genderrdo" class="control-label col-sm-3">Gender:</label>
                     <div class="radio col-sm-2">
