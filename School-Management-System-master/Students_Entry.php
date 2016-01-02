@@ -1,4 +1,6 @@
 <?php
+$con=mysqli_connect("localhost","root","","database");
+
     $id="";
     $opr="";
     if(isset($_GET['opr']))
@@ -16,9 +18,18 @@
         $addr    = $_POST['addrtxt'];
         $dob     = $_POST['dob'];
         $mail    = $_POST['emailtxt'];
+        $password    = $_POST['password'];
+        
+        $role = 'Student';
+        
+        
+        
+        $query = "INSERT INTO users_tbl VALUES('','$l_name','$password','$role')";
+        mysqli_query($con,$query);
 
-        $sql_ins=mysql_query("INSERT INTO stu_tbl VALUES('$roll_no', NULL,'$f_name','$l_name','$gender','$dob','$addr','$phone','$mail')");
-        if($sql_ins==true) {
+        
+        $query  = "INSERT INTO stu_tbl VALUES('$roll_no', NULL,'$f_name','$l_name','$gender','$dob','$addr','$phone','$mail')";
+        if (mysqli_query($con,$query) == true) {
             $msg = ucfirst($f_name) ;
             echo "<div>"
                 . "<div class='alert alert-success col-md-6 col-md-offset-3'>"
@@ -114,6 +125,7 @@ if($opr=="upd")
                             <input type="text" class="form-control" id="lnametxt" name="lnametxt" value="<?php echo $rs_upd['l_name'];?>"/>
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         <label for="gender" class="control-label col-sm-3">Gender:</label>
                         <div class="radio col-sm-2">
@@ -190,6 +202,16 @@ else
                           <input type="text" class="form-control" id="lnametxt" name="lnametxt"  placeholder="Last Name..." required>
                       </div>
                 </div>
+                
+                <div class="form-group">
+                      <label for="password" class="control-label col-sm-3">Password:</label>
+                      <div class="col-sm-8">
+                          <input type="text" class="form-control" id="password" name="password"  placeholder="Password" required>
+                      </div>
+                </div>
+                
+                    
+                
                 <div class="form-group">
                       <label for="gender" class="control-label col-sm-3">Gender:</label>
                       <div class="radio col-sm-2">
