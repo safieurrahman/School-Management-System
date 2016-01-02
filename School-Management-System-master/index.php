@@ -1,5 +1,11 @@
+<style>
+<?php include 'css/master-ui.css'; ?>
+</style>
+
 <?php include '_header.html'; ?>
+
 <?php
+
 	session_start();
 	
 	require("conection/connect.php");
