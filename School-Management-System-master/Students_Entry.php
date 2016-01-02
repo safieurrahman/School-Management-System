@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","","database");
+$con=mysqli_connect("localhost","root","","database_new");
 
     $id="";
     $opr="";
@@ -206,7 +206,7 @@ else
                 <div class="form-group">
                       <label for="password" class="control-label col-sm-3">Password:</label>
                       <div class="col-sm-8">
-                          <input type="text" class="form-control" id="password" name="password"  placeholder="Password" required>
+                          <input type="password" class="form-control" id="password" name="password"  placeholder="Password" required>
                       </div>
                 </div>
                 

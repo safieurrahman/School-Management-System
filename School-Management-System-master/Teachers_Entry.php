@@ -1,6 +1,6 @@
 <?php
 
-$con=mysqli_connect("localhost","root","","database");
+$con=mysqli_connect("localhost","root","","database_new");
 
 	$msg="";
 	$opr="";
@@ -31,7 +31,7 @@ if(isset($_POST['btn_sub'])){
         mysqli_query($con,$query);
     
 	
-$sql_ins=mysql_query("INSERT INTO teacher_tbl VALUES( NULL,'$f_name','$l_name' ,'$gender','$dob','$addr','$degree','$salary' ,'$married','$phone','$mail')");
+$sql_ins=mysql_query("INSERT INTO teacher_tbl VALUES( NULL,'$f_name','$l_name' ,'$gender','$dob','$addr','$degree','$salary' ,'$married','$phone','$mail','$role')");
 if($sql_ins==true) {
     $msg = ucfirst($f_name) ;
     echo "<div>"

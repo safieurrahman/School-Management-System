@@ -93,7 +93,19 @@ $tag=$_GET['tag'];
 </li>
 </ul>
 </li>
-<li><a href="?tag=View_Expenses">Expenses</a></li>
+    
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Expenses <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a href="admin.php?tag=expense_entry">Expense Entry</a>
+</li>
+<li>
+<a href="admin.php?tag=view_expense">View Expense</a>
+</li>
+</ul>
+</li>
+    
 <!-- <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Contact <b class="caret"></b></a>
 <ul class="dropdown-menu">
@@ -134,7 +146,7 @@ $tag=$_GET['tag'];
 <a href="admin.php?tag=susers_entry">Users Entry</a>
 </li>
 <li>
-<a href="admin.php?tag=View_Expenses">Expenses</a>
+<a href="admin.php?tag=expense_entry">Expense Entry</a>
 </li>
 </ul>
 </div>
@@ -158,6 +170,8 @@ elseif($tag=="faculties_entry")
 include("Faculties_Entry.php");
 elseif($tag=="susers_entry")
 include("Users_Entry.php");
+elseif($tag=="expense_entry")
+include("Expense_Entry.php");
 elseif($tag=="view_students")
 include("View_Students.php");
 elseif($tag=="view_teachers")
@@ -184,6 +198,7 @@ include("View_location.php");
 // include("View_Articaly.php");
 elseif($tag="View_Expenses")
 include("View_Expenses.php");
+
 /*$tag= $_REQUEST['tag'];
 if(empty($tag)){
 include ("Students_Entry.php");
