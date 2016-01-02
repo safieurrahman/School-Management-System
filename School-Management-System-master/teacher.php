@@ -26,54 +26,10 @@ $tag=$_GET['tag'];
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Students <b class="caret"></b></a>
 <ul class="dropdown-menu">
 <li>
-<a href="everyone.php?tag=student_entry">Student Entry</a>
+<a href="teacher.php?tag=student_entry">Student Entry</a>
 </li>
 <li>
-<a href="everyone.php?tag=view_students">View Student</a>
-</li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Teachers <b class="caret"></b></a>
-<ul class="dropdown-menu">
-<li>
-<a href="everyone.php?tag=teachers_entry">Teachers Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=view_teachers">View Teachers</a>
-</li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Staff <b class="caret"></b></a>
-<ul class="dropdown-menu">
-<li>
-<a href="everyone.php?tag=staff_entry">Staff Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=view_staff">View Staff</a>
-</li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Faculties <b class="caret"></b></a>
-<ul class="dropdown-menu">
-<li>
-<a href="everyone.php?tag=faculties_entry">Faculties Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=view_faculties">View Faculties</a>
-</li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Subject <b class="caret"></b></a>
-<ul class="dropdown-menu">
-<li>
-<a href="everyone.php?tag=subject_entry">Subject Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=view_subjects">View Subject</a>
+<a href="teacher.php?tag=view_students">View Student</a>
 </li>
 </ul>
 </li>
@@ -81,25 +37,13 @@ $tag=$_GET['tag'];
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Score <b class="caret"></b></a>
 <ul class="dropdown-menu">
 <li>
-<a href="everyone.php?tag=score_entry">Score Entry</a>
+<a href="teacher.php?tag=score_entry">Score Entry</a>
 </li>
 <li>
-<a href="everyone.php?tag=view_scores">View Score</a>
+<a href="teacher.php?tag=view_scores">View Score</a>
 </li>
 </ul>
 </li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Users <b class="caret"></b></a>
-<ul class="dropdown-menu">
-<li>
-<a href="everyone.php?tag=susers_entry">Users Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=view_users">View Users</a>
-</li>
-</ul>
-</li>
-<li><a href="?tag=View_Expenses">Expenses</a></li>
 <!-- <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Contact <b class="caret"></b></a>
 <ul class="dropdown-menu">
@@ -112,7 +56,7 @@ $tag=$_GET['tag'];
 </ul>
 --> </li>
 <li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> admin <b class="caret"></b></a>
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Teacher <b class="caret"></b></a>
 <ul class="dropdown-menu">
 <li>
 <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
@@ -122,28 +66,10 @@ $tag=$_GET['tag'];
 </ul>
 <ul class="nav navbar-nav side-nav visible-lg visible-md visible-sm">
 <li>
-<a href="everyone.php?tag=student_entry">Student Entry</a>
+<a href="teacher.php?tag=student_entry">Student Entry</a>
 </li>
 <li>
-<a href="everyone.php?tag=teachers_entry">Teacher Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=staff_entry">Staff Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=faculties_entry">Faculty Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=subject_entry">Subjects Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=score_entry">Scores Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=susers_entry">Users Entry</a>
-</li>
-<li>
-<a href="everyone.php?tag=View_Expenses">Expenses</a>
+<a href="teacher.php?tag=score_entry">Scores Entry</a>
 </li>
 </ul>
 </div>
