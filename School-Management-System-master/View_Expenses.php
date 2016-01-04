@@ -36,10 +36,14 @@ if(isset($_GET['rs_id']))
 </head>
 
 <body>
+	<h1 style="text-align:center; font-size:30px; padding:5px;">Total Expenses</h1>
+	  
 <div class="col-md-12  view-form-style">
-<div class="col-md-12 entry-head margin-20b">
-    <h4 class="left">Total Expenses</h4>
-   
+<div class="col-md-1 entry-head margin-20b">
+   <!-- <h4 class="left">Total Expenses</h4>-->
+  
+   <a class="btn btn-primary right" href="?tag=expense_entry">Generate Total Expense</a>
+   <a class="btn btn-primary right" href="../donations/insert_monetary_help.php"style="margin-top:10px;">Request Donation </a>
 </div>
 <form role="form" data-toggle="validator" method="post" class="form-horizontal">
     <div class="form-group">
@@ -75,6 +79,7 @@ if(isset($_GET['rs_id']))
         $sql_sel  =mysql_query("SELECT exp_id,date,student_expense,teachers_salary,staff_salary,bills,extras, (teachers_salary+staff_salary+bills+extras+student_expense) as tot FROM expenses ORDER BY date DESC;");
 		
     $i=0;
+	$count = 0;
     while($row=mysql_fetch_array($sql_sel)){
     $i++;
     $color=($i%2==0)?"lightblue":"white";
@@ -93,7 +98,14 @@ if(isset($_GET['rs_id']))
           <td><?php echo $total=$row['teachers_salary']+$row['staff_salary']+$row['bills']+$row['extras']+$row['student_expense'];?></td>
           <td><a href="?tag=expense_entry&opr=upd&rs_id=<?php echo $row['exp_id'];?>" title="Upate"><img src="picture/update.png" /></a></td>
           <td><a href="?tag=view_expense&opr=del&rs_id=<?php echo $row['exp_id'];?>" title="Delete"><img src="picture/delete.png" /></a></td> 
-        </tr>
+        </tr>       
+    <?php	$count++;
+	// if($count==1){
+	 //	$myJSON = array("date"=>$row['date'],"students_expense"=>$row['student_expense'],"teachers_salary"=>$row['teachers_salary'],
+	//	 "staff_salary"=>$row['staff_salary'],"bills"=>$row['bills'],"extras"=>$row['extras'],"total"=>$total);
+	 //	echo json_encode($myJSON);
+		//}
+		?>
     <?php	
     }
     ?>

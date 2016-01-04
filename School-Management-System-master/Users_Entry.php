@@ -10,7 +10,8 @@ if(isset($_GET['rs_id']))
 	
 if(isset($_POST['btn_sub'])){
 	$username=$_POST['usertxt'];
-	$pwd=$_POST['pwdtxt'];
+	$appr=$_POST['apprtxt'];
+	//$pwd=$_POST['pwdtxt'];
 	$type=$_POST['typetxt'];
 	
 
@@ -18,8 +19,8 @@ $sql_ins=mysql_query("INSERT INTO users_tbl
 						VALUES(
 							NULL,
 							'$username',
-							'$pwd' ,
-							'$type'
+							'$type',
+							'$appr',
 							)
 					");
 if($sql_ins==true) {
@@ -40,12 +41,13 @@ else
 //------------------uodate data----------
 if(isset($_POST['btn_upd'])){
 	$username=$_POST['usertxt'];
-	$pwd=$_POST['pwdtxt'];
+	$appr=$_POST['apprtxt'];
 	$type=$_POST['typetxt'];
 	
 	$sql_update=mysql_query("UPDATE users_tbl SET 
 								username='$username' ,
-								password='$pwd' , 
+								type='$type',
+								approved='$appr',  								 
 								type='$type'
 							WHERE
 								u_id=$id
@@ -91,23 +93,31 @@ if($opr=="upd")
                         <input type="text" class="form-control" id="usertxt" name="usertxt" value="<?php echo $rs_upd['username'];?>">
                     </div>
                 </div>
+                
+                
                 <div class="form-group">
-                    <label for="pwdtxt" class="control-label col-sm-3">Password:</label>
+                    <label for="apprtxt" class="control-label col-sm-3">Approved:</label>
                     <div class="col-sm-8">
-                        <input type="password" data-minlength="6" data-error="Enter Valid 6 Digit Phone Number" class="form-control" id="pwdtxt" name="pwdtxt"  value="<?php  echo $rs_upd['password'];?>">
-                        <div class="help-block with-errors"></div>
+                    	<select name="apprtxt" id ="apprtxt" class="form-control">
+                    		<option <?php if($rs_upd['approved'] =='1') echo "selected";?> value="1">Yes</option>
+                    		<option <?php if($rs_upd['approved'] =='0') echo "selected";?> value="0">No</option>
+                    		</select>
+                        
+                        
                     </div>
                 </div>
+                    
                 <div class="form-group">
                     <label for="typetxt" class="control-label col-sm-3">Type:</label>
                     <div class="col-sm-8">
                         <select class="form-control" name="typetxt">
-                            <option <?php if($rs_upd['type']=="Student") echo "selected";?>>Student</option>
-                            <option <?php if($rs_upd['type']=="Teacher") echo "selected";?>>Teacher</option>
-                            <option <?php if($rs_upd['type']=="Admin") echo "selected";?>>Admin</option>
+                            <option <?php if($rs_upd['type']=="student") echo "selected";?>>student</option>
+                            <option <?php if($rs_upd['type']=="teacher") echo "selected";?>>teacher</option>
+                            <option <?php if($rs_upd['type']=="admin") echo "selected";?>>admin</option>
                         </select>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <input type="submit" name="btn_upd" value="Register" class="btn btn-success col-md-offset-4 col-sm-offset-4 col-xs-offset-2"/>
                     <input type="reset" value="Cancel" class="btn btn-primary col-md-offset-3 col-sm-offset-3 col-xs-offset-3"/>
@@ -138,12 +148,25 @@ else
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="pwdtxt" class="control-label col-sm-3">Password:</label>
+                    <label for="typetxt" class="control-label col-sm-3">Type:</label>
                     <div class="col-sm-8">
-                        <input type="password" data-minlength="6" data-error="Enter Valid 6 Digit Phone Number" class="form-control" id="pwdtxt" name="pwdtxt"  placeholder="Password..." required>
-                        <div class="help-block with-errors"></div>
+                        <select class="form-control" name="typetxt">
+                            <option>student</option>
+                            <option>teacher</option>
+                            <option>admin</option>
+                        </select>
                     </div>
                 </div>
+                
+                 <div class="form-group">
+                    <label for="apprtxt" class="control-label col-sm-3">Approved</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" name="apprtxt">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>                   
+                        </select>
+                    </div>
+        
                 <div class="form-group">
                     <label for="typetxt" class="control-label col-sm-3">Type:</label>
                     <div class="col-sm-8">
